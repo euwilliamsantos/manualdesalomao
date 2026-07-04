@@ -1,0 +1,27 @@
+{
+    "source": "https://charm-builder-quiz.lovable.app/",
+    "rippedAt": "2026-07-04T01:52:12+00:00",
+    "files": [
+        "index.html",
+        "assets/index-meMBVrXq.js",
+        "assets/styles-Dkf9TIyc.css",
+        "_external/fonts.googleapis.com/css2",
+        "assets/routes-C4txxNls.js",
+        "favicon.ico",
+        "_external/pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4ce1ce33-74ea-462a-a6cb-9ee0962d0d59/id-preview-5708b196--4baf4287-4e7b-4267-9bfe-823b9d8f78f4.lovable.app-1783128032515.png",
+        "_external/fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
+        "_external/fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf",
+        "_external/fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
+        "_external/fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
+        "_external/fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrFJA.ttf",
+        "_external/fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9V1s.ttf",
+        "_external/fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6V1s.ttf",
+        "_external/fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7V1s.ttf",
+        "_external/fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4V1s.ttf",
+        "_external/fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5V1s.ttf"
+    ],
+    "errors": [
+        "https://fonts.googleapis.com/: HTTP 404",
+        "https://fonts.gstatic.com/: HTTP 404"
+    ]
+}
