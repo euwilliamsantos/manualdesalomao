@@ -1,199 +1,228 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/styles-Dkf9TIyc.css" data-precedence="default"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" data-precedence="default"/><title>Quiz — Comunicação Masculina</title><meta name="description" content="Descubra em 2 minutos o que está travando suas conversas com mulheres."/><meta name="author" content="Manual de Salomão"/><meta property="og:title" content="Quiz — Comunicação Masculina"/><meta property="og:description" content="Descubra em 2 minutos o que está travando suas conversas com mulheres."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@Lovable"/><meta name="twitter:title" content="Quiz — Comunicação Masculina"/><meta name="twitter:description" content="Descubra em 2 minutos o que está travando suas conversas com mulheres."/><meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4ce1ce33-74ea-462a-a6cb-9ee0962d0d59/id-preview-5708b196--4baf4287-4e7b-4267-9bfe-823b9d8f78f4.lovable.app-1783128032515.png"/><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4ce1ce33-74ea-462a-a6cb-9ee0962d0d59/id-preview-5708b196--4baf4287-4e7b-4267-9bfe-823b9d8f78f4.lovable.app-1783128032515.png"/><link rel="modulepreload" href="assets/index-meMBVrXq.js"/><link rel="modulepreload" href="assets/routes-C4txxNls.js"/><link rel="icon" href="favicon.ico" type="image/x-icon"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
-<style>
-	@font-face {
-		font-family: 'CameraPlainVariable';
-		src: url('https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2') format('woff2');
-		font-weight: 100 900;
-		font-style: normal;
-		font-display: swap;
-	}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Manual de Salomão | Diagnóstico de Atratividade Comunicativa</title>
+    <meta name="description" content="Descubra qual o seu perfil de comunicação e por que suas conversas com mulheres esfriam rapidamente. Faça o teste de 10 perguntas e obtenha o diagnóstico.">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	#lovable-badge {
-		--badge-bg: #1b1b1b;
-		--badge-text: #c5c1b9;
-		--badge-text-hover: #dcdad5;
-		--badge-radius: 6px;
-		--badge-padding: 8px;
-		--badge-gap: 6px;
-		--badge-shadow: 
-			0 0 0 1px rgba(0, 0, 0, 0.88),
-			0 1px 0 0 rgba(0, 0, 0, 0.04),
-			0 2px 2px -1px rgba(0, 0, 0, 0.08),
-			0 4px 4px -2px rgba(0, 0, 0, 0.08),
-			0 8px 8px -4px rgba(0, 0, 0, 0.08),
-			0 16px 16px -8px rgba(0, 0, 0, 0.08);
-		--badge-transition-duration: 0.2s;
-		--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
-		--focus-color: #575ECF;
-		--focus-offset: 2px;
-		--focus-width: 2px;
-		
-		position: fixed;
-		bottom: 12px;
-		right: 12px;
-		height: 24px;
-		display: flex;
-		align-items: center;
-		z-index: 1000000;
-		background-color: var(--badge-bg) !important;
-		color: var(--badge-text) !important;
-		border-radius: var(--badge-radius);
-		box-shadow: var(--badge-shadow) !important;
-		font-size: 12px;
-		font-family: CameraPlainVariable, "CameraPlainVariable Fallback", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-		font-weight: 400 !important;
-		text-transform: none !important;
-		font-feature-settings: normal !important;
-		transform: translateZ(0);
-		will-change: transform, opacity;
-	}
+    <!-- Subtle Premium Background Effect -->
+    <div class="bg-overlay"></div>
 
-	#lovable-badge-cta {
-		display: flex;
-		align-items: center;
-		gap: var(--badge-gap);
-		padding: 0 var(--badge-padding);
-		height: 100%;
-		color: inherit;
-		text-decoration: none;
-		white-space: nowrap;
-		border-radius: var(--badge-radius) 0 0 var(--badge-radius);
-		transition: 
-			background-color var(--badge-transition-duration) ease,
-			color var(--badge-transition-duration) ease,
-			transform 0.1s ease;
-	}
+    <!-- Canvas for Confetti -->
+    <canvas id="confetti-canvas"></canvas>
 
-	#lovable-badge-cta:hover {
-		background: rgba(255, 255, 255, 0.04);
-		color: var(--badge-text-hover);
-	}
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header id="quiz-header">
+            <div class="logo-wrapper">
+                <span class="logo-dot"></span>
+                <span>Salomão Lab</span>
+            </div>
+        </header>
 
-	#lovable-badge-cta:active {
-		transform: scale(0.98);
-	}
+        <!-- Dynamic Progress Bar (Visible during Quiz) -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress-header">
+                <span class="progress-step-text" id="progress-step-text">Pergunta 1 de 10</span>
+                <span class="progress-percentage" id="progress-percentage">10%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
 
-	#lovable-badge-cta:focus {
-		outline: none;
-	}
+        <main>
+            <!-- 1. TELA INICIAL (WELCOME SCREEN) -->
+            <section class="screen active" id="welcome-screen">
+                <div class="hero-box">
+                    <span class="badge-tag"><i class="fa-solid fa-bolt"></i> Análise de Perfil Masculino</span>
+                    <h1 class="headline">
+                        Por que suas conversas com mulheres <span>sempre esfriam</span> ou acabam em vácuo?
+                    </h1>
+                    <p class="subheadline">
+                        Descubra em 2 minutos os maiores bloqueios inconscientes que matam a atração nas suas mensagens e como dominá-los ainda hoje.
+                    </p>
 
-	#lovable-badge-cta:focus-visible {
-		outline: var(--focus-width) solid var(--focus-color);
-		outline-offset: var(--focus-offset);
-		z-index: 1;
-	}
+                    <!-- Interactive Mockup preview -->
+                    <div class="welcome-mockup">
+                        <div class="mock-chat-bubble">
+                            Oi, tudo bem? O que você faz de bom hoje?
+                        </div>
+                        <div class="mock-chat-bubble sent">
+                            <span class="pulse-dot" style="margin-right: 6px; width: 6px; height: 6px; background-color: white; box-shadow: none;"></span> <em>Digitando...</em>
+                        </div>
+                    </div>
 
-	#lovable-badge-text {
-		line-height: 1;
-	}
+                    <button class="btn-premium btn-pulse-subtle" id="btn-start-quiz">
+                        INICIAR DIAGNÓSTICO
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
 
-	#lovable-badge-divider {
-		width: 1px;
-		height: 24px;
-		background-color: rgba(255, 255, 255, 0.04);
-		flex-shrink: 0;
-	}
+                    <div class="security-note">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15l-4-4 1.41-1.41L10 13.17l7.59-7.59L19 7l-9 9z"/>
+                        </svg>
+                        <span>Diagnóstico 100% Anônimo & Seguro</span>
+                    </div>
+                </div>
+            </section>
 
-	#lovable-badge-close {
-		width: 24px;
-		height: 24px;
-		min-width: 24px;
-		min-height: 24px;
-		cursor: pointer;
-		background: none;
-		border: none;
-		padding: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
-		flex-shrink: 0;
-		transition: 
-			background-color var(--badge-transition-duration) ease,
-			transform 0.1s ease;
-	}
+            <!-- 2. TELA DO QUIZ (DINAMIC QUESTIONS) -->
+            <section class="screen" id="quiz-screen">
+                <div class="question-card" id="question-card">
+                    <!-- Javascript will render question here -->
+                </div>
+            </section>
 
-	#lovable-badge-close:hover {
-		background: rgba(255, 255, 255, 0.04);
-	}
+            <!-- 3. TELA DE CARREGAMENTO (LOADING SCREEN) -->
+            <section class="screen" id="loading-screen">
+                <div class="loading-container">
+                    <div class="tech-loader-wrapper">
+                        <div class="loader-glow"></div>
+                        <div class="loader-ring"></div>
+                        <div class="loader-ring-active"></div>
+                        <div class="loader-ring-active-reverse"></div>
+                        <span class="loader-percentage" id="loader-percentage">0%</span>
+                    </div>
+                    
+                    <h2 class="headline" style="font-size: 1.5rem; max-width: 100%;">
+                        Processando seus Dados...
+                    </h2>
 
-	#lovable-badge-close:active {
-		transform: scale(0.92);
-	}
+                    <div class="loading-bar-track">
+                        <div class="loading-bar-fill" id="loading-bar-fill"></div>
+                    </div>
 
-	#lovable-badge-close:focus {
-		outline: none;
-	}
+                    <div class="loading-steps-list" id="loading-steps-list">
+                        <div class="step-item" id="step-0">
+                            <span class="step-icon">1</span>
+                            <span>Analisando suas respostas e padrão comportamental...</span>
+                        </div>
+                        <div class="step-item" id="step-1">
+                            <span class="step-icon">2</span>
+                            <span>Identificando seus maiores bloqueios na comunicação...</span>
+                        </div>
+                        <div class="step-item" id="step-2">
+                            <span class="step-icon">3</span>
+                            <span>Comparando seu perfil com mais de 5.000 homens...</span>
+                        </div>
+                        <div class="step-item" id="step-3">
+                            <span class="step-icon">4</span>
+                            <span>Detectando por que suas conversas esfriam rapidamente...</span>
+                        </div>
+                        <div class="step-item" id="step-4">
+                            <span class="step-icon">5</span>
+                            <span>Gerando seu diagnóstico de atratividade verbal...</span>
+                        </div>
+                        <div class="step-item" id="step-5">
+                            <span class="step-icon">6</span>
+                            <span>Preparando a recomendação personalizada do Manual de Salomão...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-	#lovable-badge-close:focus-visible {
-		outline: var(--focus-width) solid var(--focus-color);
-		outline-offset: calc(var(--focus-offset) * -1);
-		z-index: 1;
-	}
+            <!-- 4. TELA DE RESULTADO (RESULT SCREEN) -->
+            <section class="screen" id="result-screen">
+                <div class="result-card">
+                    <div class="result-header">
+                        <span class="result-badge">Diagnóstico Concluído</span>
+                        <h2 class="result-profile-title" id="profile-title">
+                            Perfil: <span>O Comunicador Invisível</span>
+                        </h2>
+                    </div>
 
-	#lovable-badge-close svg path {
-		fill: var(--badge-text);
-		transition: fill var(--badge-transition-duration) ease;
-	}
+                    <div class="diagnostic-grid">
+                        <!-- Diagnostic Item 1: Biggest Mistake -->
+                        <div class="diagnostic-item">
+                            <h3 class="diagnostic-title error">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                Seu maior erro na conversa
+                            </h3>
+                            <p class="diagnostic-desc" id="diagnostic-biggest-error">
+                                --
+                            </p>
+                        </div>
 
-	#lovable-badge-close:hover svg path {
-		fill: var(--badge-text-hover);
-	}
+                        <!-- Diagnostic Item 2: Why it happens -->
+                        <div class="diagnostic-item">
+                            <h3 class="diagnostic-title">
+                                <i class="fa-solid fa-circle-question"></i>
+                                Por que isso acontece
+                            </h3>
+                            <p class="diagnostic-desc" id="diagnostic-why-happens">
+                                --
+                            </p>
+                        </div>
 
-	@media (prefers-reduced-motion: reduce) {
-		#lovable-badge-cta,
-		#lovable-badge-close,
-		#lovable-badge-close svg path {
-			transition: none;
-		}
-		
-		#lovable-badge-cta:active,
-		#lovable-badge-close:active {
-			transform: none;
-		}
-	}
+                        <!-- Diagnostic Item 3: How to solve -->
+                        <div class="diagnostic-item">
+                            <h3 class="diagnostic-title how-to">
+                                <i class="fa-solid fa-circle-check"></i>
+                                A Solução Definitiva
+                            </h3>
+                            <p class="diagnostic-desc" id="diagnostic-how-to-solve">
+                                --
+                            </p>
+                        </div>
+                    </div>
 
-	@media (prefers-contrast: high) {
-		#lovable-badge {
-			--badge-bg: #000;
-			--badge-text: #fff;
-			--badge-text-hover: #fff;
-			border: 2px solid currentColor;
-		}
-		
-		#lovable-badge-cta:focus-visible,
-		#lovable-badge-close:focus-visible {
-			outline-width: 3px;
-		}
-	}
-</style>
-</head><body><!--$--><main class="relative min-h-screen w-full overflow-x-hidden bg-radial-glow"><div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 opacity-70 bg-drift" style="background:radial-gradient(600px 300px at 20% 10%, rgba(255,30,30,0.10), transparent 60%), radial-gradient(500px 260px at 90% 90%, rgba(255,30,30,0.08), transparent 60%)"></div><div class="mx-auto flex min-h-screen w-full max-w-2xl flex-col px-5 pb-16 pt-8 sm:px-6 sm:pt-12"><section class="flex flex-1 flex-col items-center justify-center py-10 text-center"><div class="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs font-medium tracking-wide text-[#B8B8B8] backdrop-blur"><span class="h-1.5 w-1.5 rounded-full bg-[#FF1E1E] shadow-[0_0_10px_2px_rgba(255,30,30,0.8)]"></span>DIAGNÓSTICO RÁPIDO • 2 MINUTOS</div><h1 class="animate-fade-up text-gradient-red text-balance text-[2rem] font-bold leading-[1.15] tracking-[-0.02em] sm:text-5xl sm:leading-[1.1] md:text-[3.25rem]" style="animation-delay:80ms">Descubra por que suas conversas com mulheres não evoluem</h1><p class="animate-fade-up mt-6 max-w-md text-balance text-[15px] leading-[1.7] text-[#B8B8B8] sm:mt-7 sm:max-w-lg sm:text-lg sm:leading-[1.65]" style="animation-delay:180ms">Um teste rápido e honesto para identificar o que está travando sua comunicação — e o que você pode fazer diferente a partir de hoje.</p><button class="btn-primary-glow animate-fade-up group relative mt-10 inline-flex items-center justify-center gap-2 overflow-hidden rounded-2xl px-8 py-4 text-sm font-semibold uppercase tracking-wider hover:-translate-y-0.5 hover:brightness-110 sm:text-base" style="animation-delay:280ms"><span class="relative z-10">Começar o teste</span><svg class="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"></path></svg><span aria-hidden="true" class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full"></span></button><p class="animate-fade-up mt-6 text-xs text-[#8a8a8a]" style="animation-delay:360ms">10 perguntas • 100% anônimo</p></section></div></main><script>(function(a,f){let l;try{l=JSON.parse(sessionStorage.getItem(a)||"{}")}catch{return}const n=l?.[f||history.state?.__TSR_key];let c=!1;for(const t in n){const e=n[t],o=e?.scrollX,s=e?.scrollY;if(Number.isFinite(o)&&Number.isFinite(s)){if(t==="window")scrollTo(o,s),c=!0;else if(t)try{const r=document.querySelector(t);r&&(r.scrollLeft=o,r.scrollTop=s)}catch{}}}if(c)return;const i=location.hash.slice(1);if(i){const t=history.state?.__hashScrollIntoViewOptions??!0;if(t){const e=document.getElementById(i);e&&e.scrollIntoView(t)}return}scrollTo(0,0)})("tsr-scroll-restoration-v1_3");document.currentScript.remove()</script><!--/$--><script class="$tsr" id="$tsr-stream-barrier">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["/assets/index-meMBVrXq.js"],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:"module",async:!0,src:"/assets/index-meMBVrXq.js"}}]},"/":$R[8]={preloads:$R[9]=["/assets/routes-C4txxNls.js"]}}},matches:$R[10]=[$R[11]={i:"__root__ ",u:1783129929642,s:"success",ssr:!0},$R[12]={i:"  ",u:1783129929642,s:"success",ssr:!0}],lastMatchId:"  "})($R["tsr"]);$_TSR.e();document.currentScript.remove()</script><script type="module" async="" src="assets/index-meMBVrXq.js"></script>
+                    <!-- Sales Copy & Pitch -->
+                    <div class="product-pitch">
+                        <p class="product-intro-badge">Recomendação Única</p>
+                        <h3 class="product-name">
+                            Destrave suas conversas com o <span>O Manual de Salomão</span>
+                        </h3>
+                        <p class="product-desc">
+                            O método passo a passo detalhado para você dominar os pilares da comunicação magnética, gerar conversas envolventes e nunca mais ficar sem assunto.
+                        </p>
 
-<script>
-	// Don't show the lovable-badge if the page is in an iframe or if it's being rendered by puppeteer (screenshot service)
-	if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
-		var badge = document.getElementById('lovable-badge');
-		if (badge) {
-			badge.style.display = 'none';
-		}
-	}
+                        <!-- Dynamic benefits based on profiles -->
+                        <div class="benefits-list" id="benefits-list">
+                            <!-- JS will populate custom benefits -->
+                        </div>
 
-	// Add click event listener to close button with animation
-	var closeButton = document.getElementById('lovable-badge-close');
-	if (closeButton) {
-		closeButton.addEventListener('click', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-			var badge = document.getElementById('lovable-badge');
-			if (badge) {
-				badge.classList.add('closing');
-				setTimeout(function() {
-					if (badge) {
-						badge.style.display = 'none';
-					}
-				}, 240);
-			}
-		});
-	}
-</script>
-</body></html>
+                        <!-- High Converting Sales Box -->
+                        <div class="cta-box">
+                            <p class="cta-box-title">Oferta Exclusiva para o seu Perfil</p>
+                            <div class="price-display">
+                                <span class="price-old">De R$ 97,00</span>
+                                <span class="price-new">Por R$ <span>19,90</span></span>
+                            </div>
+                            
+                            <a href="https://pay.kiwify.com.br/Yj8GRHa" target="_blank" class="btn-premium btn-pulse-subtle" style="max-width: 100%; text-decoration: none;" id="btn-checkout-cta">
+                                SIM! QUERO O MANUAL DE SALOMÃO
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            
+                            <p class="payment-subtext">
+                                <i class="fa-solid fa-shield-halved"></i> Acesso imediato pelo e-mail • Garantia incondicional de 7 dias
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 O Manual de Salomão. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px;">
+                <a href="#">Termos de Uso</a> • <a href="#">Políticas de Privacidade</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
